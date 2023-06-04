@@ -1,5 +1,12 @@
 module.exports = ({ env }) => ({
   defaultConnection: "default",
+  settings: {
+    cors: {
+      enabled: true,
+      origin: env('CORS_ORIGIN', '*'), // Puedes personalizar el origen permitido aquí
+      headers: '*', // Puedes personalizar los encabezados permitidos aquí
+      methods: '*', // Puedes personalizar los métodos permitidos aquí
+    },
   connections: {
     default: {
       connector: "mongoose",
